@@ -25,18 +25,15 @@ function createMarkup(arr) {
 
 function handlerClick(evt){
     evt.preventDefault();
-    if(evt.target === evt.currentTarget) {
-        return
-    }
-    const originalUrl = target.dataset.sourse();
-    modal = basicLightbox.create(`<img
-    class="gallery__image"
+    const target = evt.target;
+    if(target.classList.contains('gallery__image')) {
+      const originalUrl = target.dataset.source;
+      const modal = basicLightbox.create(`<img
     src="${originalUrl}"
-    data-source="${original}"
-    alt="${description}"
+    width='800' heigh='600'
   /> `)
   modal.show();
-};
+}};
 
-// console.log(basicLightbox);
+
 
